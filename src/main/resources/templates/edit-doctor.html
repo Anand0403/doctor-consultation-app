@@ -84,7 +84,7 @@
 
         const response =
             await fetch(
-                "http://localhost:8080/doctors"
+                "/doctors"
             );
 
         const doctors =
@@ -128,7 +128,7 @@
         };
 
         const response = await fetch(
-            `http://localhost:8080/doctors/${doctorId}`,
+            `/doctors/${doctorId}`,
             {
                 method: "PUT",
 
