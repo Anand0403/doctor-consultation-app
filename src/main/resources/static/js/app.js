@@ -3,7 +3,7 @@
 // =========================
 
 async function loadDoctors(
-    url = "http://localhost:8080/doctors"
+    url = "/doctors"
 ) {
 
     const response = await fetch(url);
@@ -66,7 +66,7 @@ async function loadDoctors(
 async function loadSlots(doctorId) {
 
     const response = await fetch(
-        `http://localhost:8080/slots/${doctorId}`
+        `/slots/${doctorId}`
     );
 
     const slots = await response.json();
@@ -129,7 +129,7 @@ async function bookSlot(slotId) {
     if (!userName) return;
 
     const response = await fetch(
-        `http://localhost:8080/bookings?slotId=${slotId}&userName=${userName}`,
+        `/bookings?slotId=${slotId}&userName=${userName}`,
         {
             method: "POST"
         }
@@ -159,7 +159,7 @@ async function loadBookings() {
 
     const response =
         await fetch(
-            "http://localhost:8080/bookings"
+            "/bookings"
         );
 
     const bookings =
@@ -232,7 +232,7 @@ async function filterDoctors() {
         ).value;
 
     let url =
-        "http://localhost:8080/doctors";
+        "/doctors";
 
     if (specialization) {
 
